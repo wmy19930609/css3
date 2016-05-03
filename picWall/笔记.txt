@@ -1,0 +1,6 @@
+onselect 与 onselectstart
+
+    onselect与input,textarea使用，文本被选择后触发；
+    onselectstart可与除了input,textarea之外的任何对象使用，目标元素开始选中，通常用于禁止变蓝的操作（双击变蓝）
+
+
