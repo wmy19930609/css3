@@ -3,9 +3,108 @@
 <head>
     <meta charset="UTF-8">
     <title>Wall</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        body{
+            background: #fff;
+            color: #555;
+            font-size: 14px;
+        }
+        #wrap{
+            width: 100%;
+            height: 600px;
+            position: absolute;/*?*/
+            top: 50%;
+            margin-top: -300px;
+            overflow: hidden;
+            -webkit-perspective: 800px;
+            perspective: 800px;
+            background: #333;
+        }
+        .photo{
+            position: absolute;
+            width: 260px;
+            height: 320px;
+            box-shadow: 0 0 1px rgba(0, 0, 0, .01);/*?*/
+        }
+        .photo-center{
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-top: -160px;
+            margin-left: -130px;
+            z-index: 2;
+        }
+        .photo-wrap{
+            /*开启3D旋转*/
+            transform: translate(0, 0);
+            -webkit-transition: all .6s ease-in-out;
+            -webkit-transform-style: preserve-3d;
+            -webkit-transform-origin: 0 50% 0;
+        }
+        .side{
+            position: absolute;
+            box-sizing: border-box;
+            width: 100%;
+            height: 100%;
+            background: #eee;
+            padding: 20px;
+            overflow: hidden;
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+            -moz-backface-visibility: hidden;
+            -ms-backface-visibility: hidden;
+        }
+        .side-front{
+            transform: rotateY(0deg);
+            -webkit-transform: rotateY(0deg);
+            -moz-transform: rotateY(0deg);
+            -o-transform: rotateY(0deg);
+            -ms-transform: rotateY(0deg);
+        }
+        .image{
+            width: 100%;
+            height: 250px;
+            line-height: 250px;
+            overflow: hidden;
+        }
+        .image img{
+            width: 100%;
+        }
+        .caption{
+            padding-top: 8px;
+            text-align: center;
+            line-height: 30px;
+        }
+        .side-back{
+            -webkit-transform: rotateY(180deg);
+        }
+        
+
+    </style>
 </head>
 <body onselectstart="return false;" style="-moz-user-select: none;">
-    <div class="wrap" id="wrap"></div>
+    <div id="wrap">
+        <div class="photo photo-center">
+            <div class="photo-wrap">
+                <div class="side side-front">
+                    <p class="image">
+                        <img src="images/11 千与千寻.jpg">
+                    </p>
+                    <p class="caption">千与千寻</p>
+                </div>
+                <div class="side side-back">
+                    ·人生就是一列开往坟墓的列车，路途上会有很多站，很难有人可以自始至终陪着走完。当陪你的人要下车时，即使不舍也该心存感激，然后挥手道别。<br>
+                    ·曾经发生过的事情不可能忘记，只不过是想不起而已。<br>
+                    ·人永远不知道，谁哪次不经意的跟你说了再见之后，就真的不会再见了。<br>
+                    ·我只能送你到这里了，剩下的路你要自己走，不要回头。<br>
+                </div>
+            </div>
+        </div>
+    </div>
     
 </body>
 </html>
